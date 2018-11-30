@@ -15,6 +15,7 @@ class App extends Component {
       this.state.board.push({
         idx: i,
         val: ""
+        
       })
     }
   }
