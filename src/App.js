@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Gif from './gif.js'
 
 class App extends Component {
   constructor(props) {
@@ -15,10 +16,25 @@ class App extends Component {
       this.state.board.push({
         idx: i,
         val: ""
-        
       })
     }
   }
+  reset ()
+
+ {const board=[]
+   for (let i = 0; i < 9; i++) {
+
+     board.push(
+       {
+         idx: i,
+         val: ""
+       }
+     )
+   }
+   this.setState({
+     board:board
+   })
+ }
   play(idx) {
     const text = this.state.writeX ? 'X' : '0'
     const board = this.state.board
@@ -95,6 +111,11 @@ class App extends Component {
 
 
       </div>
+      <div id="button">
+
+         <button onClick={this.reset}> reset</button>
+
+       </div>
       </div>
     );
   }
